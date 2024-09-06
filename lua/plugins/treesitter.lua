@@ -4,6 +4,7 @@ return {
     dependencies = {
       "windwp/nvim-ts-autotag",
     },
+    event = { "BufRead", "BufNewFile" },
     opts = {
       ensure_installed = {
         "bash",
@@ -13,40 +14,31 @@ return {
         "html",
         "markdown",
         "markdown_inline",
-        "css",
         "typescript",
-        "tsx",
         "javascript",
-        "hurl",
         "json",
         "json5",
         "jsonc",
         "graphql",
-        "prisma",
         "rust",
         "go",
         "toml",
         "c",
-        "proto",
 	"python",
-        "svelte",
-        "astro",
-        "embedded_template",
       },
       auto_install = true,
       -- ensure_installed = "all", -- one of "all" or a list of languages
-      ignore_install = { "" }, -- List of parsers to ignore installing
+      ignore_install = { }, -- List of parsers to ignore installing
       sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
 
       highlight = {
         enable = true, -- false will disable the whole extension
+	additional_vim_regex_highlighting = false,
         disable = { "css" }, -- list of language that will be disabled
       },
       autopairs = {
         enable = true,
       },
-      indent = { enable = true, disable = { "python", "css" } },
-
       context_commentstring = {
         enable = true,
         enable_autocmd = false,
@@ -59,3 +51,5 @@ return {
     },
   },
 }
+
+

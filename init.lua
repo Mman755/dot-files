@@ -3,6 +3,8 @@ vim.cmd('source ~/.vimrc')
 require("config.lazy")
 
 
+vim.cmd([[autocmd BufRead,BufNewFile * TSEnable highlight]])
+
 local function print_plugins()
   local plugins = require("lazy").plugins()
   for _, plugin in pairs(plugins) do
