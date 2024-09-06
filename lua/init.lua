@@ -1,2 +1,2 @@
-require("lazy").setup({{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}})
+--require("lazy").setup({{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}})
 

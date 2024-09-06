@@ -28,6 +28,7 @@ return {
         "toml",
         "c",
         "proto",
+	"python",
         "svelte",
         "astro",
         "embedded_template",
