@@ -29,4 +29,3 @@ def generate_haiku():
 # Generate and print the haiku
 print("Your Random Haiku:")
 print(generate_haiku())
-
