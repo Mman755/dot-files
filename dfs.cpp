@@ -1,52 +1,45 @@
-#include <bits/stdc++.h>
-using namespace std;
+/*
+ * RANDOM GPT SCRIPT TO TEST THEMES/LSP/TREESITTER
+ *
+ */
 
-// Function to add an edge to the adjacency list
-void addEdge(vector<vector<int>> &adj, int s, int t){
-    // Add edge from vertex s to t
-    adj[s].push_back(t); 
-    // Due to undirected Graph
-    adj[t].push_back(s);
-}
 
-// Recursive function for DFS traversal
-void DFSRec(vector<vector<int>> &adj, vector<bool> &visited, int s){
-    // Mark the current vertex as visited
-    visited[s] = true;
+#include <iostream>
+#include <cstdlib>  // For std::rand() and std::srand()
+#include <ctime>    // For std::time()
 
-    // Print the current vertex
-    cout << s << " ";
+int main() {
+    // Initialize random seed
+    std::srand(static_cast<unsigned>(std::time(0)));
 
-    // Recursively visit all adjacent vertices that are not visited yet
-    for (int i : adj[s])
-        if (visited[i] == false)
-            DFSRec(adj, visited, i);
-}
+    // Generate a random number between 1 and 100
+    int secretNumber = std::rand() % 100 + 1;
+    int guess;
+    int attempts = 0;
+    std::string str = "random";
 
-// Main DFS function that initializes the visited array
-// and call DFSRec
-void DFS(vector<vector<int>> &adj, int s){
-    vector<bool> visited(adj.size(), false);
-    // Call the recursive DFS function
-    DFSRec(adj, visited, s);
-}
 
-int main(){
-    int V = 5; // Number of vertices in the graph
 
-    // Create an adjacency list for the graph
-    vector<vector<int>> adj(V);
+    std::cout << "Welcome to the Number Guessing Game!" << std::endl;
+    std::cout << "I have chosen a number between 1 and 100." << std::endl;
+    std::cout << "Can you guess what it is?" << std::endl;
 
-    // Define the edges of the graph
-    vector<vector<int>> edges={{1, 2},{1, 0},{2, 0},{2, 3},{2, 4}};
+    // Game loop
+    while (true) {
+        std::cout << "Enter your guess: ";
+        std::cin >> guess;
+        attempts++;
 
-    // Populate the adjacency list with edges
-    for (auto &e : edges)
-        addEdge(adj, e[0], e[1]);
-
-    int source = 1; // Starting vertex for DFS
-    cout << "DFS from source: " << source << endl;
-    DFS(adj, source); // Perform DFS starting from the source vertex
+        // Check the user's guess
+        if (guess > secretNumber) {
+            std::cout << "Too high! Try again." << std::endl;
+        } else if (guess < secretNumber) {
+            std::cout << "Too low! Try again." << std::endl;
+        } else {
+            std::cout << "Congratulations! You guessed the number in " << attempts << " attempts." << std::endl;
+            break;
+        }
+    }
 
     return 0;
 }

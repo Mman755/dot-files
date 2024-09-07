@@ -18,19 +18,15 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    -- import your plugins
-    { import = "plugins" },
+    -- Import your plugins
+    { import = "plugins" }, -- Adjust to match your plugin directory structure
   },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
-  --install = { colorscheme = { "habamax" } },
-  install = { colorscheme = { "tokyonight" } },
 
-  -- automatically check for plugin updates
+  install = { colorscheme = { "rose-pine" } }, -- Corrected color scheme name
+
   checker = { enabled = true },
 })
 
-vim.cmd[[colorscheme tokyonight]]
 
-
+vim.cmd("colorscheme rose-pine")
 
