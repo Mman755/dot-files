@@ -8,7 +8,7 @@ return {
         extend_background_behind_borders = true,
         styles = {
           bold = true,
-          italic = true,
+          italic = false,
           transparency = true,
         },
         highlight_groups = {
