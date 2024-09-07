@@ -7,7 +7,7 @@ return {
         variant = "main", -- Set to 'dawn' for the light variant
         extend_background_behind_borders = true,
         styles = {
-          bold = true,
+          bold = false,
           italic = false,
           transparency = true,
         },
