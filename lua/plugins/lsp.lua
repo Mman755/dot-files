@@ -48,6 +48,15 @@ return {
 			-- Use the current file's directory as the root
 			return util.find_git_ancestor(fname) or util.path.dirname(fname)
 		    end,
+		    settings = {
+			python = {
+			    analysis = {
+				typeCheckingMode = "basic",
+				autoSearchPaths = true,
+				useLibraryCodeForTypes = true,
+			    },
+			},
+		    },
 			}
 		end,
 
